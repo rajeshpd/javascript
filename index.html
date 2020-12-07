@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<style>
+
+.container {overflow: hidden}
+.tab{float: left;}
+.tab-2{margin-left: 50px}
+.tab-2 input{display: block;margin-bottom: 20px;}
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="tab tab-1">
+     
+  </div>
+  <div class="tab tab-2">
+    name:<input type="text" name="name"id="name">
+    address:<input type="text" name="address"id="address">
+    mobile:<input type="text" name="mobile"id="mobile">
+    <button class="btn btn-primary" onclick="addHtmlTableRow();" id="submit">register</button>
+
+  </div>
+  
+  
+</div>
+<br><br>
+<table id="table">
+  <tr>
+      <th>name</th>
+      <th>address</th>
+      <th>mobile number</th>
+  </tr>
+</table>
+<script>
+  function addHtmlTableRow()
+{
+    var table=document.getElementById("table"),
+    newRow=table.insertRow(table.length),
+    cell1=newRow.insertCell(0),
+    cell2=newRow.insertCell(1),
+    cell3=newRow.insertCell(2), 
+
+    name=document.getElementById("name").value,
+    address=document.getElementById("address").value,
+    mobile=document.getElementById("mobile").value;
+
+    cell1.innerHTML =name;
+    cell2.innerHTML=address;
+    cell3.innerHTML=mobile;
+  }
+</script>
+<script src="style.css"></script>
+</body>
+</html>
